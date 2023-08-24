@@ -58,6 +58,14 @@ extension Date {
             return NSLocalizedString("Today", comment: "")
         }
     }
+    
+    public func isInInterval(start:Date, end:Date) -> Bool {
+        return self >= start && self <= end
+    }
+    
+    public func isInInterval(startTs:TimeInterval, endTs:TimeInterval) -> Bool {
+        return timeIntervalSince1970 >= startTs && timeIntervalSince1970 <= endTs
+    }
 }
 
 extension DateFormatter {
